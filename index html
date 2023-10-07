@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de Página Web</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+</head>
+
+<body><div class="loading-container">
+  <progress id="loading-progress" max="100"></progress>
+  <img id="loading-image" src="https://github.com/josemoises2007/alurabooks/assets/106701602/82b5c7ce-7be3-4ec3-8dca-37b3221d632f" alt="Loading" width="190"></div > 
+ <center> <h3>O aprendizado do curso de "JavaScript para Web: Crie páginas dinâmicas" </h3></center>
+      <div class="video-container">
+  
+  <div id='player1' class="player">
+	<video id='video-element1' preload="metadata" lazy="loader" poster="">
+		<source src='https://user-images.githubusercontent.com/106701602/206590417-3ae62d36-233f-4cf1-86e7-e35139bb05db.mp4' type='video/mp4'>
+		<source src='https://user-images.githubusercontent.com/106701602/206590417-3ae62d36-233f-4cf1-86e7-e35139bb05db.mp4' type='video/ogg'>
+	</video>
+	<div id='controls1' class="controls">
+		<progress id='progress-bar1' min='0' max='100' value='0'>0% played</progress>
+		<button id='btnReplay1' class='replay' title='replay' accesskey="R" onclick='replayVideo(1);'>Replay</button>	
+		<button id='btnPlayPause1' class='play' title='play' accesskey="P" onclick='playPauseVideo(1);'>Play</button>
+		<button id='btnStop1' class='stop' title='stop' accesskey="X" onclick='stopVideo(1);'>Stop</button>
+		<input type="range"class="volume-bar" id="volume-bar1" title="volume" min="0" max="1" step="0.1" value="1" onchange='updateVolume(1);'>
+		<button id='btnMute1' class='mute' title='mute' onclick='muteVolume(1);'>Mute</button>	
+		<button id='btnFullScreen1' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(1);'>[&nbsp;&nbsp;]</button>
+	</div>
+</div>	
+<div style="clear:both"></div>
+
+<div id='player2' class="player">
+	<video id='video-element2' preload="metadata" lazy="loader" poster="">
+		<source src='
+https://github.com/josemoises2007/alurabooks/assets/106701602/01fc6948-11ee-46c1-869f-450259a16515' type='video/mp4'>
+		<source src='
+https://github.com/josemoises2007/alurabooks/assets/106701602/01fc6948-11ee-46c1-869f-450259a16515' type='video/ogg'>
+	</video>
+	<div id='controls2' class="controls">
+		<progress id='progress-bar2' min='0' max='100' value='0'>0% played</progress>
+		<button id='btnReplay2' class='replay' title='replay' accesskey="R" onclick='replayVideo(2);'>Replay</button>	
+		<button id='btnPlayPause2' class='play' title='play' accesskey="P" onclick='playPauseVideo(2);'>Play</button>
+		<button id='btnStop2' class='stop' title='stop' accesskey="X" onclick='stopVideo(2);'>Stop</button>
+		<input type="range" id="volume-bar2" class="volume-bar" title="volume" min="0" max="1" step="0.1" value="1" onchange='updateVolume(2);'>
+		<button id='btnMute2' class='mute' title='mute' onclick='muteVolume(2);'>Mute</button>	
+		<button id='btnFullScreen2' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(2);'>[&nbsp;&nbsp;]</button>
+	</div>
+</div>	  
+        
+        
+        
+<div style="clear:both"></div>
+  <div id='player3' class="player">
+	<video id='video-element3' preload="metadata" lazy="loader" poster="">
+		<source src='
+https://github.com/josemoises2007/alurabooks/assets/106701602/00c4c33b-711b-4177-9587-9ae8089b3080
+' type='video/mp4'>
+		<source src='
+https://github.com/josemoises2007/alurabooks/assets/106701602/00c4c33b-711b-4177-9587-9ae8089b3080
+' type='video/ogg'>
+	</video>
+	<div id='controls3' class="controls">
+		<progress id='progress-bar3' min='0' max='100' value='0'>0% played</progress>
+		<button id='btnReplay3' class='replay' title='replay' accesskey="R" onclick='replayVideo(3);'>Replay</button>	
+		<button id='btnPlayPause3' class='play' title='play' accesskey="P" onclick='playPauseVideo(3);'>Play</button>
+		<button id='btnStop3' class='stop' title='stop' accesskey="X" onclick='stopVideo(3);'>Stop</button>
+		<input type="range"class="volume-bar" id="volume-bar3" title="volume" min="0" max="1" step="0.1" value="3" onchange='updateVolume(3);'>
+		<button id='btnMute1' class='mute' title='mute' onclick='muteVolume(3);'>Mute</button>	
+		<button id='btnFullScreen3' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen(3);'>[&nbsp;&nbsp;]</button>
+	</div>
+</div>	
+<div style="clear:both"></div>
+  </div>
+  <p>Nesta aula, consegui implementar várias funções e gramáticas da linguagem de programação JavaScript. Para evitar repetições na aula, gostaria de personalizar vídeos de forma eficiente, usando apenas um código que pode ser aplicado a todos os vídeos. Para implementar outro vídeo, basta adicionar o seguinte código:</p>
+  <p>no js</p>
+<pre><code>
+initializeVideoControls('video-element+número_que_você_usar', 
+                      'progress-bar+número_que_você_usar', 
+                      'btnReplay+número_que_você_usar',
+                      'btnPlayPause+número_que_você_usar', 
+                      'btnStop+número_que_você_usar', 
+                      'volume-bar+número_que_você_vai_mudar', 
+                      'btnMute+número_que_você_vai_mudar', 
+                      'btnFullScreen+número_que_você_vai_mudar');
+</code></pre><p>no html</p><pre><code>
+ &lt;div id='player+ o numero que vc colocou no js' class="player"&gt;
+    &lt;video id='video-element+ o numero que vc colocou no js' preload="metadata" lazy="loader" poster=""&gt;
+        &lt;source src='https://github.com/josemoises2007/alurabooks/assets/106701602/01fc6948-11ee-46c1-869f-450259a16515' type='video/mp4'&gt;
+        &lt;source src='https://github.com/josemoises2007/alurabooks/assets/106701602/01fc6948-11ee-46c1-869f-450259a16515' type='video/ogg'&gt;
+    &lt;/video&gt;
+    &lt;div id='controls+ o numero que vc colocou no js' class="controls"&gt;
+        &lt;progress id='progress-bar+ o numero que vc colocou no js' min='0' max='100' value='0'&gt;0% played&lt;/progress&gt;
+        &lt;button id='btnReplay+ o numero que vc colocou no js' class='replay' title='replay' accesskey="R" onclick='replayVideo("+ o numero que vc colocou no js");'&gt;Replay&lt;/button&gt;    
+        &lt;button id='btnPlayPause+ o numero que vc colocou no js' class='play' title='play' accesskey="P" onclick='playPauseVideo("+ o numero que vc colocou no js");'&gt;Play&lt;/button&gt;
+        &lt;button id='btnStop+ o numero que vc colocou no js' class='stop' title='stop' accesskey="X" onclick='stopVideo("+ o numero que vc colocou no js");'&gt;Stop&lt;/button&gt;
+        &lt;input type="range" id="volume-bar+ o numero que vc colocou no js" class="volume-bar" title="volume" min="0" max="1" step="0.1" value="1" onchange='updateVolume("+ o numero que vc colocou no js");'&gt;
+        &lt;button id='btnMute+ o numero que vc colocou no js' class='mute' title='mute' onclick='muteVolume("+ o numero que vc colocou no js");'&gt;Mute&lt;/button&gt;    
+        &lt;button id='btnFullScreen+ o numero que vc colocou no js' class='fullscreen' title='toggle full screen' accesskey="T" onclick='toggleFullScreen("+ o numero que vc colocou no js");'&gt;[&nbsp;&nbsp;]&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+	</code></pre>
+<p>Esse código permitirá que você faça as mesmas personalizações nos vídeos, sem a necessidade de repetir o código HTML.</p>
+  <style>
+  
+ 
+ 
+    
+    p { font-size: 1.9em; }
+
+    h1 { 
+    	font-size:16px;
+    	color:#333;
+    }
+    
+    .player { padding: 1em;
+    	float:left;
+      width:40%;
+   margin:10px;
+     overflow: auto;
+border-radiu:30px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.3px);
+-webkit-backdrop-filter: blur(2.3px);
+      position:relative;
+    }
+    
+    .controls {
+      border: 1px solid yellow;
+      width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 5px;
+      padding-bottom: 3px;
+      border-radius: 7px;
+    }
+    
+    .video {
+    	border:1px solid yellow;
+    	g:420px;
+    	height:231px;
+    	background:blue;
+    }
+    
+    button {
+    	text-indent:-9999px;
+    	width:16px;
+    	height:16px;
+    	border:none;
+    	cursor:pointer;
+    	background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAAAQCAYAAAAWNJ1eAAAAB3RJTUUH4AMQDS0aGLmsqwAAAAlwSFlzAAAOdAAADnQBaySz1gAAAvZJREFUeNrtmk2u0zAQxyele7gBZcOWcAJ8AKTXFVvKhnW5QbhBD4BEe4GnvgULdkaCNeUE5N2gbJGgeDJ26rhO4rFbKRX5P7mtP+YX2x1PHPdl4ErCa/W6UEmc1ACsVekGQjWyeKwrVWYN+bF63aqU99jsVJqryblvbTGyeKxrkoSPesxC/f3CosyaEBzso0DUvgL5JmZk8VhdoihXKLsnLLtLsYix1jkcf+VIU12wZUwI6LZo89xTN7J4rFOZLxxgxrjG+Vm0WNB27hlvXrWQICb6Im5IXqhU9lwi17Zuh13WS2juF/Dzq0TWW+tzLMvuj2ip47J480W8G5V+qnSwStfg+9KxDbW98V6Bw+qThGdA0WYBPQtmohu507rRYQ/ryg77RU8e9Vmlb1b+q0q3iawPqn+fEllmrF+qlDbGUDVtyRkwQs0YjFll4zpSHMsvikASyHnwVlwALbSV1aq+nU2gfRWGOJPoyaNw33VwyqYDYIXqkqwV0x5vK7sWWy6rSwUcHQgd5b1ebO+AIlvtQNh4GoSkx9RN5P0Vr/HbKTsw7P0sWT9ZxrBET5lMZNnqYs2Yvb7TNF/E4bGkM2/CelInZ0WtVPkPp90bZfvQOBAqzInS9MdTFutE52H5bl92mUxk2eKwhiOzB/L33nIgVJgTpT0tZE7+AcQ70XlY9ioU9TFHXJ9i7UglcOaU9j2FZRvPEidzyR33C9BONoGutYLOg7v99h2+7Mn79Bf8X3w4S9T26ayQ6boca8m0tw83l4msLu31u+hoY+r26ERrz1D7nMdo3ZNHPQWKGEa5LotnySrcThNZobocC/c4tP8oGYwS6AT87gysNm31+1I/6jdFZcZptyaUfwf+2cdOdfz08Gxk8VhNLm1Y3e1DzK0nhdU8kceotIJjFBVADmTq8omumMMxhIVoD8cdvKuRxWMdZTas4ed0l2HRzzNC9xudpQByIgmnj//34w+wQ2ANVf6fPfZ63IUZU+YxHOa/SfwPrCvVP/2nY6KBhDUMAAAAAElFTkSuQmCC') no-repeat 0 0; /* url('buttons.png') */
+    }
+    
+    .pause { background-position:-19px 0; }
+    .stop { background-position:-38px 0; }
+
+    #volume-bar1 {
+	    width: 50px;
+      vertical-align: middle;
+      padding:0px;
+    }
+    .mute { background-position:-95px 0; }
+    .unmute { background-position:-114px 0; }
+    .replay { background-position:-133px 0; }
+    .fullscreen {
+        text-indent: 0px;
+       background: linear-gradient(90deg, rgba(16,0,255,1) 0%, rgba(29,45,253,0.8379726890756303) 50%, rgba(69,128,252,0.5830707282913166) 100%);
+      backgroun-repeat: repeat;
+        background-image: none;
+        padding: 0px;
+        font-weight: bold;
+        padding-bottom: 3px;
+    }
+
+    
+    #progress-bar2,#progress-bar1,#progress-bar3 {
+      color: blue ;
+      font-size: 12px;
+      width: 220px;
+      height: 16px;
+      border: none;
+      margin-right: 10px;
+      background: rgb(16,0,255);
+background: linear-gradient(90deg, rgba(16,0,255,1) 0%, rgba(29,45,253,0.8379726890756303) 50%, rgba(69,128,252,0.5830707282913166) 100%);
+      backgroun-repeat: repeat;
+      border-radius: 9px;
+      vertical-align: middle;
+    }
+    progress::-moz-progress-bar { 
+      color:linear-gradient(90deg, rgba(16,0,255,1) 0%, rgba(29,45,253,0.8379726890756303) 50%, rgba(69,128,252,0.5830707282913166) 100%);
+      backgroun-repeat: repeat;
+      background: linear-gradient(90deg, rgba(16,0,255,1) 0%, rgba(29,45,253,0.8379726890756303) 50%, rgba(69,128,252,0.5830707282913166) 100%);
+      backgroun-repeat: repeat;
+    }
+    
+    progress[value]::-webkit-progress-bar {
+      background-color: blue;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(252,176,69,1)inset;
+    }
+    
+    progress[value]::-webkit-progress-value {
+      background-color:blue;
+    }
+    
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 70%;
+      margin: 6.8px 0;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4.4px;
+      cursor: pointer;
+      box-shadow: 0.9px 0.9px 1.7px blue, 0px 0px 0.9px blue;
+      background: blue;
+      border-radius: 1px;
+      border: 1.1px solid blue;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      box-shadow: 2.6px 2.6px 3.7px yellow, 0px 0px 2.6px white;
+      border: 2.5px solid blue;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: yellow;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7.9px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: yellow;
+    }
+    input[type=range]::-moz-range-track {
+      width: 70%;
+      height: 4.4px;
+      cursor: pointer;
+      box-shadow: 0.9px 0.9px 1.7px black, 0px 0px 0.9px blue;
+      background:blue;
+      border-radius: 1px;
+      border: 1.1px solid blue;
+    }
+    input[type=range]::-moz-range-thumb {
+      box-shadow: 2.6px 2.6px 3.7px blue, 0px 0px 2.6px  blue;
+      border: 2.5px solid #83e584;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: #439643;
+      cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+      width: 70%;
+      height: 4.4px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+      background: #194620;
+      border: 1.1px solid #18d501;
+      border-radius: 2px;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    }
+    input[type=range]::-ms-fill-upper {
+      background: #205928;
+      border: 1.1px solid #18d501;
+      border-radius: 2px;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    }
+    input[type=range]::-ms-thumb {
+      box-shadow: 2.6px 2.6px 3.7px #00aa00, 0px 0px 2.6px #00c300;
+      border: 2.5px solid #83e584;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: #439643;
+      cursor: pointer;
+      height: 4.4px;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+      background: blue;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+      background: #276c30;
+    }ground-color: lightgray;
+    }
+    
+    p { font-size: 0.9em; }
+
+    h1 { 
+    	font-size:16px;
+    	color:#333;
+    }
+    
+    .player {
+    	float:left;
+       padding: 9px 1px;
+
+    background: rgba(255, 255, 255, 0.363);
+border-radius:10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.3px);
+-webkit-backdrop-filter: blur(2.3px)
+     
+    }
+    
+    .controls {
+background:rgba(0,0,0,0.4);
+      border: 1px solid blue;
+      width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 5px;
+      padding-bottom: 3px;
+      border-radius: 7px;>>>
+    }
+    
+    video {
+   position:relative;
+      left:10%;
+    	width:420px;
+    	height:231px;
+    	background: rgba(255, 255, 255, 0.363);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.3px);
+-webkit-backdrop-filter: blur(2.3px)url("https://myfiles.space/user_files/127601_e31c146deadb8975/127601_custom_files/Screenshot_20221205-131441.png?4448");
+     background-position:center;
+     background-attachment:fixed;
+ 
+    }
+    
+    button :hover{
+    	text-indent:-9999px;
+    	width:16px;
+    	height:16px;
+    	border:none;
+    	cursor:pointer;
+    	background:transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAAAQCAYAAAAWNJ1eAAAAB3RJTUUH4AMQDS0aGLmsqwAAAAlwSFlzAAAOdAAADnQBaySz1gAAAvZJREFUeNrtmk2u0zAQxyele7gBZcOWcAJ8AKTXFVvKhnW5QbhBD4BEe4GnvgULdkaCNeUE5N2gbJGgeDJ26rhO4rFbKRX5P7mtP+YX2x1PHPdl4ErCa/W6UEmc1ACsVekGQjWyeKwrVWYN+bF63aqU99jsVJqryblvbTGyeKxrkoSPesxC/f3CosyaEBzso0DUvgL5JmZk8VhdoihXKLsnLLtLsYix1jkcf+VIU12wZUwI6LZo89xTN7J4rFOZLxxgxrjG+Vm0WNB27hlvXrWQICb6Im5IXqhU9lwi17Zuh13WS2juF/Dzq0TWW+tzLMvuj2ip47J480W8G5V+qnSwStfg+9KxDbW98V6Bw+qThGdA0WYBPQtmohu507rRYQ/ryg77RU8e9Vmlb1b+q0q3iawPqn+fEllmrF+qlDbGUDVtyRkwQs0YjFll4zpSHMsvikASyHnwVlwALbSV1aq+nU2gfRWGOJPoyaNw33VwyqYDYIXqkqwV0x5vK7sWWy6rSwUcHQgd5b1ebO+AIlvtQNh4GoSkx9RN5P0Vr/HbKTsw7P0sWT9ZxrBET5lMZNnqYs2Yvb7TNF/E4bGkM2/CelInZ0WtVPkPp90bZfvQOBAqzInS9MdTFutE52H5bl92mUxk2eKwhiOzB/L33nIgVJgTpT0tZE7+AcQ70XlY9ioU9TFHXJ9i7UglcOaU9j2FZRvPEidzyR33C9BONoGutYLOg7v99h2+7Mn79Bf8X3w4S9T26ayQ6boca8m0tw83l4msLu31u+hoY+r26ERrz1D7nMdo3ZNHPQWKGEa5LotnySrcThNZobocC/c4tP8oGYwS6AT87gysNm31+1I/6jdFZcZptyaUfwf+2cdOdfz08Gxk8VhNLm1Y3e1DzK0nhdU8kceotIJjFBVADmTq8omumMMxhIVoD8cdvKuRxWMdZTas4ed0l2HRzzNC9xudpQByIgmnj//34w+wQ2ANVf6fPfZ63IUZU+YxHOa/SfwPrCvVP/2nY6KBhDUMAAAAAElFTkSuQmCC') no-repeat 0 0; /* url('buttons.png') */
+    }
+    
+    .pause { background-position:-19px 0; }
+    .stop { background-position:-38px 0; }
+
+    .volume-bar {
+	    width: 50px;
+      vertical-align: middle;
+      padding:0px;
+    }
+    .mute { background-position:-95px 0; }
+    .unmute { background-position:-114px 0; }
+    .replay { background-position:-133px 0; }
+    .fullscreen {
+        text-indent: 0px;
+        color: yellow;
+        background-color: black;
+        background-image: none;
+        padding: 0px;
+        font-weight: bold;
+        padding-bottom: 3px;
+    }
+
+    
+    progress {
+      color: yellow;
+      font-size: 12px;
+      width: 220px;
+      height: 16px;
+      border: none;
+      margin-right: 10px;
+      background: #434343;
+      border-radius: 9px;
+      vertical-align: middle;
+    }
+    progress::-moz-progress-bar { 
+      color:yellow;
+      background:#434343; 
+    }
+    
+    progress[value]::-webkit-progress-bar {
+      background-color: #434343;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+      border-radius:50px;
+    }
+    
+    progress[value]::-webkit-progress-value {
+    background: linear-gradient(90deg, rgba(16,0,255,1) 0%, rgba(29,45,253,0.8379726890756303) 50%, rgba(69,128,252,0.5830707282913166) 100%);
+      backgroun-repeat: repeat;
+      border-radius:50px;
+    }
+    
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 10%;
+      margin: 6.8px 0;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4.4px;
+      cursor: pointer;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+      background: #205928;
+      border-radius: 1px;
+      border: 1.1px solid #18d501;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      box-shadow: 2.6px 2.6px 3.7px #00aa00, 0px 0px 2.6px #00c300;
+      border: 2.5px solid #83e584;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: #439643;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7.9px;
+    }
+    input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #276c30;
+    }
+    input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 4.4px;
+      cursor: pointer;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+      background: #205928;
+      border-radius: 1px;
+      border: 1.1px solid #18d501;
+    }
+    input[type=range]::-moz-range-thumb {
+      box-shadow: 2.6px 2.6px 3.7px #00aa00, 0px 0px 2.6px #00c300;
+      border: 2.5px solid #83e584;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: #439643;
+      cursor: pointer;
+    }
+    input[type=range]::-ms-track {
+      width: 100%;
+      height: 4.4px;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+    input[type=range]::-ms-fill-lower {
+      background: #194620;
+      border: 1.1px solid #18d501;
+      border-radius: 2px;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    }
+    input[type=range]::-ms-fill-upper {
+      background: #205928;
+      border: 1.1px solid #18d501;
+      border-radius: 2px;
+      box-shadow: 0.9px 0.9px 1.7px #002200, 0px 0px 0.9px #003c00;
+    }
+    input[type=range]::-ms-thumb {
+      box-shadow: 2.6px 2.6px 3.7px #00aa00, 0px 0px 2.6px #00c300;
+      border: 2.5px solid #83e584;
+      height: 18px;
+      width: 9px;
+      border-radius: 3px;
+      background: #439643;
+      cursor: pointer;
+      height: 4.4px;
+    }
+    input[type=range]:focus::-ms-fill-lower {
+      background: #205928;
+    }
+    input[type=range]:focus::-ms-fill-upper {
+      background: #276c30;
+}
+  </style>
+  
+  
+  <script>function initializeVideoControls(videoId, progressBarId, btnReplayId, btnPlayPauseId, btnStopId, volumeBarId, btnMuteId, btnFullScreenId) {
+  var video = document.getElementById(videoId);
+  var progressBar = document.getElementById(progressBarId);
+  var btnReplay = document.getElementById(btnReplayId);
+  var btnPlayPause = document.getElementById(btnPlayPauseId);
+  var btnStop = document.getElementById(btnStopId);
+  var volumeBar = document.getElementById(volumeBarId);
+  var btnMute = document.getElementById(btnMuteId);
+  var btnFullScreen = document.getElementById(btnFullScreenId);
+
+  function replayVideo() {
+    video.currentTime = 0;
+    video.play();
+  }
+
+  function playPauseVideo() {
+    if (video.paused || video.ended) {
+      video.play();
+      btnPlayPause.innerHTML = 'Pause';
+    } else {
+      video.pause();
+      btnPlayPause.innerHTML = 'Play';
+    }
+  }
+
+  function stopVideo() {
+    video.pause();
+    video.currentTime = 0;
+    btnPlayPause.innerHTML = 'Play';
+  }
+
+  volumeBar.oninput = function() {
+    video.volume = volumeBar.value;
+    if (video.muted) {
+      video.muted = false;
+      btnMute.innerHTML = 'Mute';
+    }
+  };
+function updateVolume(videoId) {
+    var video = document.getElementById('video-element' + videoId);
+    var volumeBar = document.getElementById('volume-bar' + videoId);
+    video.volume = volumeBar.value;
+    if (video.muted) {
+        video.muted = false;
+        var btnMute = document.getElementById('btnMute' + videoId);
+        btnMute.innerHTML = 'Mute';
+    }
+}
+  function muteVolume() {
+    if (video.muted) {
+      video.muted = false;
+      btnMute.innerHTML = 'Mute';
+    } else {
+      video.muted = true;
+      btnMute.innerHTML = 'Unmute';
+    }
+  }
+
+  btnFullScreen.onclick = function() {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  };
+
+  video.addEventListener('timeupdate', function() {
+    var progress = (video.currentTime / video.duration) * 100;
+    progressBar.value = progress;
+  });
+
+  // Asignar los eventos a los elementos correspondientes
+  btnReplay.onclick = replayVideo;
+  btnPlayPause.onclick = playPauseVideo;
+  btnStop.onclick = stopVideo;
+  btnMute.onclick = muteVolume;
+}
+
+// Llamar a la función para cada video con sus identificadores únicos
+initializeVideoControls('video-element1', 'progress-bar1', 'btnReplay1', 'btnPlayPause1', 'btnStop1', 'volume-bar1', 'btnMute1', 'btnFullScreen1');
+initializeVideoControls('video-element2', 'progress-bar2', 'btnReplay2', 'btnPlayPause2', 'btnStop2', 'volume-bar2', 'btnMute2', 'btnFullScreen2');
+ initializeVideoControls('video-element3', 'progress-bar3', 'btnReplay3', 'btnPlayPause3', 'btnStop3', 'volume-bar3', 'btnMute3', 'btnFullScreen3');</script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+<style> progress{
+    box-shadow: 0px 28px 47px 17px rgba(0,0,0,0.1);
+      animation: colorAnimation 1s infinite;
+    border-radius:5px;
+ width: 470px;
+  height: 40px;
+   -webkit-transition: -webkit-transform .5s ease;
+   transition: transform .5s ease; }
+  #loading-progress:hover{-moz-transition: all 2.3s;
+ 
+-webkit-transition: all 2.3s;
+
+transition: all 2.3s;
+ /* -webkit-transform: scale(2.1);
+   transform: scale(2.1);  */ 
+  }
+ #loading-progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+   appearance: none;
+ 
+  position:center;
+ 
+}
+  
+</style>
+
+
+
+
+    <footer>
+        <p>Derechos de autor &copy; 2023 Mi Empresa</p>
+    </footer>
+</body>
+</html>
